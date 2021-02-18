@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  app:
+    build: .                 # specify the path to build context (where Dockerfile on)
+    ports:
+      - 3000:3000            # expose port 3000 on host, and connect to 3000 in the container
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'       # limit the container to use max. 0.5 cpu and 256M ram
+          memory: 256M
+    restart: unless-stopped  # restart no matter what, unless stopped

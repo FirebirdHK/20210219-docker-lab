@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  app:                       # The service is called 'app'
+    build: .                 # specify the path to build context (where Dockerfile on)
+    ports:
+      - 8080:80              # expose port 8080 on host, and connect to 80 in the container
